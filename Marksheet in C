@@ -1,0 +1,52 @@
+#include <stdio.h>
+struct student
+{
+    int rn;
+    char name[20];
+    int marks;
+};
+int i;
+void display(struct student s[], int N);
+void sort(struct student s[], int N);
+int main()
+{
+    int N;
+    printf("How many users:");
+    scanf("%d", &N);
+    struct student s[N];
+    printf("Enter the details of user 1");
+    for (i = 0; i < N; i++)
+    {
+        scanf("%d%s%d", &s[i].rn, s[i].name, &s[i].marks);
+    }
+    printf("Sorting the record by marks\n");
+    sort(s, N);
+    display(s, N);
+}
+
+void display(struct student s[], int N)
+{
+    printf("The sorted data is:\n");
+    printf("RN\tNAME\tMARKS\n");
+    for (i = 0; i < N; i++)
+    {
+        printf("%d\t%s\t%d\n", s[i].rn, s[i].name, s[i].marks);
+    }
+}
+void sort(struct student *s, int N)
+{
+    int j;
+    struct student temp;
+    for (i = 0; i < N; i++)
+    {
+        for (j = 0; j < N - 1; j++)
+        {
+            if (s[j].marks > s[j + 1].marks)
+            {
+                temp = s[j];
+                s[j] = s[j + 1];
+                s[j + 1] = temp;
+            }
+        }
+    }
+}
