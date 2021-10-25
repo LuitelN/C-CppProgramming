@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    double a,b;
+    char op;
+    cout << "Enter a number:";
+    cin >> a;
+    cout << "Enter operator:";
+    cin >> op;
+    cout << "Enter second number:";
+    cin >> b;
+    double result;
+    if(op == '+')
+    {
+        result = a+b;
+    }else if(op == '-')
+    {
+        result = a-b;
+    }else if(op == '*')
+    {
+        result = a*b;
+    }else if(op == '/')
+    {
+        result = a/b;
+    }else
+    {
+        cout << "Invalid Operator. Please use +,-,*,/";
+    }
+    cout << result;
+    return 0;
+}
